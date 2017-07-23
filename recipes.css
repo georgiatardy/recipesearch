@@ -1,23 +1,63 @@
-.wrapper{
-  margin: 10%;
+body{
+  margin: 0 auto;
+  background-color: #538A38;
 }
 
-body {
-  font-family: sans-serif;
+p{
+  color: black;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+button{
+  border: none;
   font-weight: bold;
-  font-size: 25px;
-  background-color: blue;
+  padding: .5em;
+  color: black;
 }
 
-section{
+#wrapper{
   display: flex;
-  flex-flow: wrap;
+  margin: 0 auto;
 }
 
-#input_box{
-  width: 30%;
+.searchBox{
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
-header {
-  height: 30px;
+#searchForm{
+  border: none;
+}
+
+.recipeContainer{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.recipeList{
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+
+img{
+  width: 300px;
+  height: 300px;
+}
+
+.imageContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
 }

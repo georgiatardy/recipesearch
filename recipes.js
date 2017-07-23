@@ -1,40 +1,37 @@
-let search = document.getElementById('button_box')
-.addEventListener('click', onSearch);
+let recipeBox = document.querySelector(".recipeContainer")
+let recipes = document.querySelector(".recipeList")
+let content = document.querySelector("#wrapper");
+let button = document.querySelector("#button");
+let search = document.querySelector("#search");
 
-function onSearch() {
-  let content = document.getElementById(content);
-  let input_box = document.getElementById('inout_box').value;
+// API data fetched here
 
-}
+button.addEventListener("click", function(){
+  fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?i=${search.value}`)
 
-// Gets API data
-fetch(
-  http:'http://crossorigin.me/http://www.recipepuppy.com/api/?q=${search-term}'
-)
+  .then(function(response) {
+    if (response.status === 200) {
+      return response.json();
+    }
+  })
+
+  .then(function(data) {
+    let results = data.results;
+    for (var i = 0; i < results.length; i++) {
+      recipes.innerHTML += `
+      <div class="imageContainer">
+    <img src=${results[i].thumbnail}>
+    <a href=${results[i].href}><h2 class="title">${results[i].title}</h2></a>
+    </div>
+    `
+    }
+
+  })
 
 
-.then(function(response) {
-  if (response.status !==200){
-    console.log(resoonse.status);
-    return;
-  }
 
-  content.innerHTML = ''
-  response.json().then(function(data){
-    data.results.forEach(function(results) {
-
-      if (results.thumbnail==='') {
-        results.thumbnail = "http://via.placeholder.com/150x150";
-      }
-
-      let template = `<article class="recipe">
-      <a href="${results.href}">
-      <img src="${results.thumbnail}">
-      <span>${results.title}</span>
-      <a></article>`;
-
-      content.innerHTML += template;
-    });
-
+// If there is an error with the API, this is the error message
+  .catch(function(error) {
+    console.error(error.message);
   });
 })

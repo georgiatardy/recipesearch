@@ -1,22 +1,23 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="recipes.css">
     <title>Recipes</title>
+    <link rel="stylesheet" href="recipes.css">
   </head>
   <body>
-    <section class="wrapper">
-
-      <header>
-        <input id="input_box" type="text">
-        <button id="button_box"Search</button>
-        </header>
-
-        <section id="content"></section>
-      </section>
-
-      <script type="text/javascript" src="recipes.js"></script>
-
-    </body>
-    </html>
+    <div class="wrapper">
+      <h1>Search for Recipes</h1>
+      <div class="searchBox">
+        <form id="searchForm">
+          <input type="search" id="search">
+          <button type="button" name="button" id="button">Search</button>
+        </form>
+      </div>
+      <div class="recipeContainer">
+        <ul class="recipeList">
+        </ul>
+      </div>
+    </div>
+    <script src="recipes.js"></script>
+  </body>
+</html>
