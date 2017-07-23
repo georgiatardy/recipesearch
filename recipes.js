@@ -12,6 +12,7 @@ fetch(
   http:'http://crossorigin.me/http://www.recipepuppy.com/api/?q=${search-term}'
 )
 
+
 .then(function(response) {
   if (response.status !==200){
     console.log(resoonse.status);
@@ -26,9 +27,14 @@ fetch(
         results.thumbnail = "http://via.placeholder.com/150x150";
       }
 
-      let template = <article class="recipe">
+      let template = `<article class="recipe">
       <a href="${results.href}">
-    }
+      <img src="${results.thumbnail}">
+      <span>${results.title}</span>
+      <a></article>`;
 
-  }
-}
+      content.innerHTML += template;
+    });
+
+  });
+})

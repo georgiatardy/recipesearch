@@ -1,0 +1,23 @@
+.wrapper{
+  margin: 10%;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: blue;
+}
+
+section{
+  display: flex;
+  flex-flow: wrap;
+}
+
+#input_box{
+  width: 30%;
+}
+
+header {
+  height: 30px;
+}
